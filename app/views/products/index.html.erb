@@ -1,0 +1,51 @@
+<h1>Mario's Specality Foods</h1>
+<p>aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+
+<h1>Products</h1>
+
+
+<% if @products.any? %>
+<ul>
+  <% @products.each do |product| %>
+  <li>  <%= link_to product.name, product_path(product)%> </li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no products yet</p>
+<% end %>
+
+<!-- made in amercica works -->
+
+<h1>Made in america</h1>
+
+<% if @products.usa.any? %>
+<ul>
+  <% @products.usa.each do |product| %>
+  <li>  <%= link_to product.name, product_path(product)%> </li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no products made in america</p>
+<% end %>
+
+
+ <h1>Our newest products</h1>
+
+ <% if @products.mostrecent.any? %>
+ <ul>
+   <% @products.mostrecent.each do |product| %>
+   <li>  <%= link_to product.name, product_path(product)%> </li>
+   <% end %>
+ </ul>
+ <% else %>
+ <p>There are no recent products</p>
+ <% end %>
+
+
+<h1>Our most reviewed product is:</h1>
+<p> <%= @mostreviewed %> </p>
+
+
+
+
+<p><%= link_to "Create new product", new_product_path %></p>
