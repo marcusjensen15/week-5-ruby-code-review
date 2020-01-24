@@ -17,7 +17,6 @@ describe "the add a review process" do
     #modifying test to account for sign up step before
     visit "/"
     click_link 'Sign up'
-      expect(page).to have_content "Email"
 
     # fill_in "user[email]", :with => 'test3@test.com'
     # fill_in 'Password', :with => 'password'
