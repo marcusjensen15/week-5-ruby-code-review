@@ -1,10 +1,15 @@
 <h1> Sign up</h1>
 <%= form_for @user do |f| %>
-  <%= f.label "Email" %>
-  <%= f.text_field :email %>
-  <%= f.label "Password" %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit "Sign Up" %>
+<%= f.label "Email" %>
+<%= f.text_field :email %>
+<%= f.label "Password" %>
+<%= f.password_field :password %>
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation %>
+<h4>Make Admin</h4>
+<h4><%= f.label "Yes" %></h4>
+<%= f.radio_button :admin, true %>
+<h4><%= f.label "No" %></h4>
+<%= f.radio_button :admin, false, :checked => true %>
+<%= f.submit "Sign Up" %>
 <% end %>
