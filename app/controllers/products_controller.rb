@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :authorize, only: [:new]
-  before_action :authorize_admin, only: [:destroy, :create, :update, :new]
+  before_action :authorize, only: [:show]
+  before_action :authorize_admin, only: [:destroy, :create, :update, :new, :edit]
 
 #within before_action, I could have every route execpt viewing a product and leaving a review blocked out. have a message display if they are trying to do things as a non user. perhaps create a static home page for those who haven't logged in.
 

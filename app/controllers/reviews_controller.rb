@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :authorize_admin, only: [:destroy, :update]
+  before_action :authorize_admin, only: [:destroy, :update, :edit]
 
 
 
