@@ -35,30 +35,93 @@ describe "Allows user to navigate to the sign up page" do
           end
         end
 
-        describe "Displays home page after a user signs up" do
-          it "displays home page post sign in" do
+        # describe "Displays home page after a user signs up" do
+        #   it "displays home page post sign in" do
+        #
+        #     @product = Product.create!({name: "beef",
+        #       cost: rand(50),
+        #       country_of_origin: "fun"})
+        #
+        #       @review = Review.create!({author: Faker::Food.spice,
+        #         content_body: "lajsdfljadslfjaldjf;lakjdfl;kasdjflkajsdf;lkajsdfl;kajsdfl;ajksdf;lkjasdkl;fjasl;dfjaskl;dfjals;kdjflasjdf;laksdjflakjsdflkajsdfl;jas",
+        #         rating: 4,
+        #         product_id: @product.id})
+        #         visit "/"
+        #         click_link 'Sign up'
+        #
+        #
+        #         fill_in "user[email]", :with => 'test36@test.com'
+        #         fill_in 'Password', :with => 'password'
+        #         fill_in 'Password confirmation', :with => 'password'
+        #         #find out how to check the admin box
+        #         page.choose("user_admin_true")
+        #
+        #         click_on 'Sign Up'
+        #         # visit "/"
+        #
+        #         expect(page).to have_content "Sign out"
+        #       end
+        #     end
 
-            @product = Product.create!({name: "beef",
-              cost: rand(50),
-              country_of_origin: "fun"})
+            # describe "User can sign up, sign out, login" do
+            #   it "Tests user login and logout functionality" do
+            #
+            #     @product = Product.create!({name: "beef",
+            #       cost: rand(50),
+            #       country_of_origin: "fun"})
+            #
+            #       @review = Review.create!({author: Faker::Food.spice,
+            #         content_body: "lajsdfljadslfjaldjf;lakjdfl;kasdjflkajsdf;lkajsdfl;kajsdfl;ajksdf;lkjasdkl;fjasl;dfjaskl;dfjals;kdjflasjdf;laksdjflakjsdflkajsdfl;jas",
+            #         rating: 4,
+            #         product_id: @product.id})
+            #         visit "/"
+            #         click_link 'Sign up'
+            #
+            #
+            #         fill_in "user[email]", :with => 'test36@test.com'
+            #         fill_in 'Password', :with => 'password'
+            #         fill_in 'Password confirmation', :with => 'password'
+            #         #find out how to check the admin box
+            #         page.choose("user_admin_true")
+            #
+            #         click_on 'Sign Up'
+            #         visit "/"
+            #
+            #         expect(page).to have_content "Sign out"
+            #       end
+            #     end
 
-              @review = Review.create!({author: Faker::Food.spice,
-                content_body: "lajsdfljadslfjaldjf;lakjdfl;kasdjflkajsdf;lkajsdfl;kajsdfl;ajksdf;lkjasdkl;fjasl;dfjaskl;dfjals;kdjflasjdf;laksdjflakjsdflkajsdfl;jas",
-                rating: 4,
-                product_id: @product.id})
-                visit "/"
-                click_link 'Sign up'
+
+            describe "allows a user to login" do
+              it "allows a user to login" do
+
+                @product = Product.create!({name: "beef",
+                  cost: rand(50),
+                  country_of_origin: "fun"})
+
+                  @review = Review.create!({author: Faker::Food.spice,
+                    content_body: "lajsdfljadslfjaldjf;lakjdfl;kasdjflkajsdf;lkajsdfl;kajsdfl;ajksdf;lkjasdkl;fjasl;dfjaskl;dfjals;kdjflasjdf;laksdjflakjsdflkajsdfl;jas",
+                    rating: 4,
+                    product_id: @product.id})
+
+                    @user = User.create!({email: "test5@test.com",
+                      password: "password",
+                      admin: true})
 
 
-                fill_in "user[email]", :with => 'test36@test.com'
-                fill_in 'Password', :with => 'password'
-                fill_in 'Password confirmation', :with => 'password'
-                #find out how to check the admin box
-                page.choose("user_admin_true")
+                    visit "/"
+                    click_link 'Sign in'
 
-                click_on 'Sign Up'
-                visit "/"
 
-                expect(page).to have_content "Mario's Specality Foods"
-              end
-            end
+                    fill_in "email", :with => @user.email
+                    fill_in 'password', :with => @user.password
+
+                    #find out how to check the admin box
+
+
+                    click_on 'commit'
+                    # visit "/"
+
+                    expect(page).to have_content "Sign out"
+                  end
+                end
