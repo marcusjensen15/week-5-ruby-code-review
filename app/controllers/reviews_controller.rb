@@ -2,6 +2,8 @@ class ReviewsController < ApplicationController
   before_action :authorize_admin, only: [:destroy, :update]
 
 
+
+
   def index
     # Code for listing all albums goes here.
   end
