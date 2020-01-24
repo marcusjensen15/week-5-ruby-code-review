@@ -125,3 +125,42 @@ describe "Allows user to navigate to the sign up page" do
                     expect(page).to have_content "Sign out"
                   end
                 end
+
+                # not letting me create an account through capybara
+
+                # describe "allows a user to create an account" do
+                #   it "allows a user to create an account" do
+                #
+                #     @product = Product.create!({name: "beef",
+                #       cost: rand(50),
+                #       country_of_origin: "fun"})
+                #
+                #       @review = Review.create!({author: Faker::Food.spice,
+                #         content_body: "lajsdfljadslfjaldjf;lakjdfl;kasdjflkajsdf;lkajsdfl;kajsdfl;ajksdf;lkjasdkl;fjasl;dfjaskl;dfjals;kdjflasjdf;laksdjflakjsdflkajsdfl;jas",
+                #         rating: 4,
+                #         product_id: @product.id})
+                #
+                #         @user = User.create!({email: "test5@test.com",
+                #           password: "password",
+                #           admin: true})
+                #
+                #
+                #         visit "/"
+                #         click_link 'Sign up'
+                #
+                #
+                #           fill_in "user[email]", :with => @user.email
+                #                fill_in 'Password', :with => @user.password
+                #                fill_in 'Password confirmation', :with => @user.password
+                #                #find out how to check the admin box
+                #                page.choose("user_admin_false")
+                #
+                #                click_on 'Sign Up'
+                #
+                #
+                #         # click_on 'commit'
+                #         # visit "/"
+                #
+                #         expect(page).to have_content "Sign out"
+                #       end
+                #     end
