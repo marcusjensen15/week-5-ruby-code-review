@@ -24,5 +24,5 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
+##can build a authorize user method which will check to see if the current user exists before allowing them to view anything. Perhaps if they are not a user or an admin, they can only view the entire site. 
 end
