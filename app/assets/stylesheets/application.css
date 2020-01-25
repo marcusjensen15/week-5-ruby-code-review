@@ -47,3 +47,8 @@
    margin-right: 100px;
 
  }
+
+.radio-toolbar input[type="radio"] { 
+ width:4em;
+ height:4em;
+ }

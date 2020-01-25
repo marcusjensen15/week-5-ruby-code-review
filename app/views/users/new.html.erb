@@ -6,10 +6,14 @@
 <%= f.password_field :password %>
 <%= f.label :password_confirmation %>
 <%= f.password_field :password_confirmation %>
-<h4>Make Admin</h4>
-<h4><%= f.label "Yes" %></h4>
-<%= f.radio_button :admin, true %>
-<h4><%= f.label "No" %></h4>
-<%= f.radio_button :admin, false, :checked => true %>
+<h4>Make Admin?</h4>
+<div class="radio-toolbar">
+  <h4><%= f.label "Yes" %></h4>
+  <%= f.radio_button :admin, true %>
+  <h4><%= f.label "No" %></h4>
+  <%= f.radio_button :admin, false, :checked => true %>
+</div>
+<br>
+<br>
 <%= f.submit "Sign Up" %>
 <% end %>
