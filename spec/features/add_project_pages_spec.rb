@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "the add a product as an admin process" do
+describe "add a product as an admin process" do
   it "lets you add a new product as an admin" do
     @product = Product.create!({name: "beef",
       cost: rand(50),
@@ -50,8 +50,8 @@ describe "the add a product as an admin process" do
       end
     end
 
-    describe "the add a product as an admin process" do
-      it "lets you add a new product as an admin" do
+    describe "doesnt allow a non admin to delete a product" do
+      it "prints an error when non admin trys to delete product" do
         @product = Product.create!({name: "beef",
           cost: rand(50),
           country_of_origin: "fun"})
@@ -63,18 +63,15 @@ describe "the add a product as an admin process" do
 
             @user = User.create!({email: "test5@test.com",
               password: "password",
-              admin: true})
+              admin: false})
             visit "/"
             click_link 'Sign in'
             fill_in "email", :with => @user.email
             fill_in 'password', :with => @user.password
             click_on 'commit'
-            visit products_path
-            click_link 'Create new product'
-            fill_in 'Name', :with => 'Giant Steps'
-            fill_in 'Country of origin', :with => 'Jazz'
-            fill_in 'Cost', :with => 5
-            click_on 'Create Product'
-            expect(page).to have_content 'Giant Steps'
+            visit "/products/#{@product.id}"
+            click_link 'Delete'
+
+            expect(page).to have_content ' you need to be an admin to do this action'
           end
         end
