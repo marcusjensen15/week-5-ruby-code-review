@@ -1,7 +1,10 @@
 class Product < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
-  scope :usa, -> { where(country_of_origin: "United States") }
+  scope :usa, -> { where(country_of_origin: "United States")}
+
+
+
 
   # most reviewed scope is located below in the methods
 
