@@ -14,12 +14,16 @@ User authentication now added to the application. People who are not users are a
 
 Admin users have full permission to: Create, Read, Update and Delete both products and reviews. Integration testing has been performed on all of these features and it is all passing.
 
+To date, tests have 88% coverage throughout the application. You can see the test coverage details within coverage/index.html
+
 ## Setup/Installation Requirements
 
 
 * DO NOT specify Ruby version in your Gemfile. Clone this repo down to your local machine.
 
 * When you clone down this database run the following commands: bundle install, rake db:create, rake db:migrate, rake db:test:prepare. The database has been seeded with 50 products and 250 reviews. Run the test suite with the 'rspec' command.
+
+[Here is a link to the live deployed app on Heroku](https://radiant-brushlands-64073.herokuapp.com/)
 
 
 
